@@ -7,12 +7,13 @@ const IG = "https://www.instagram.com/chuboi";
 // Brand partnership cards.
 //   image: cover photo in assets/img
 //   video: optional .mp4 in assets/video — plays muted on hover instead of the photo
-//   url:   link to the actual post (Instagram / TikTok / YouTube). Swap the profile links for the real posts.
+//   url:   optional link to the actual post (Instagram / TikTok / YouTube). Cards without a url are static, not clickable.
 const WORK = [
-  { brand: "Man Utd x Adidas", type: "Kit launch", desc: "Kit launch shoot and social content with the Manchester United squad.", image: "assets/img/p07.jpg", url: IG },
-  { brand: "EA SPORTS", type: "Host & creator", desc: "On-stage presenting at EA SPORTS esports events.", image: "assets/img/p12.jpg", url: "https://www.youtube.com/channel/UCyMF5o_gAYBPDd5PkS3gugA" },
-  { brand: "McDonald's", type: "Sponsored content", desc: "Football-led social content for a global audience.", image: "assets/img/p21.jpg", url: "https://www.tiktok.com/@chuboi" },
-  { brand: "Your brand", type: "Let's talk", desc: "Reach 1M+ engaged FC and football fans.", image: "assets/img/p11.jpg", url: "mailto:chuboibusiness@gmail.com", cta: true },
+  { brand: "Man Utd x Adidas", type: "Kit launch", desc: "Kit launch shoot and social content with the Manchester United squad.", image: "assets/img/p07.jpg" },
+  { brand: "PlayStation x UEFA Champions League", type: "Partnership", desc: "Champions League trophy content with PlayStation.", image: "assets/img/n10.jpg" },
+  { brand: "EA SPORTS", type: "Host & creator", desc: "On-stage presenting at EA SPORTS esports events.", image: "assets/img/p19.jpg" },
+  { brand: "McDonald's", type: "Sponsored content", desc: "Football-led social content for a global audience.", image: "assets/img/p21.jpg" },
+  { brand: "Your brand", type: "Let's talk", desc: "Reach 1M+ engaged FC and football fans.", image: "assets/img/p11.jpg" },
 ];
 
 // Gallery photos (shown in this order).
@@ -38,17 +39,21 @@ const PLATFORMS = [
 
 const external = (url) => url.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
 
-document.getElementById("workGrid").innerHTML = WORK.map((w) => `
-  <a class="card reveal" href="${w.url}"${external(w.url)}>
+document.getElementById("workGrid").innerHTML = WORK.map((w) => {
+  const tag = w.url ? "a" : "div";
+  const link = w.url ? ` href="${w.url}"${external(w.url)}` : "";
+  return `
+  <${tag} class="card reveal"${link}>
     <div class="card__media">
       ${w.video
         ? `<video src="${w.video}" poster="${w.image}" muted loop playsinline preload="none"></video>`
         : `<img src="${w.image}" alt="${w.brand}" loading="lazy">`}
-      <span class="card__play">${w.cta ? "→" : "▶"}</span>
+      ${w.url ? `<span class="card__play">▶</span>` : ""}
     </div>
     <div class="card__meta"><span class="card__brand">${w.brand}</span><span class="card__type">${w.type}</span></div>
     <p class="card__desc">${w.desc}</p>
-  </a>`).join("");
+  </${tag}>`;
+}).join("");
 
 document.querySelectorAll(".card video").forEach((v) => {
   const card = v.closest(".card");
