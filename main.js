@@ -18,11 +18,11 @@ const WORK = [
 
 // Gallery photos (shown in this order).
 const GALLERY = [
-  "p01", "p03", "p07", "p02", "p04", "p10",
+  "p01", "n05", "p03", "p07", "p02", "p04", "p10",
   "p06", "p14", "p20", "p11", "p13",
-  "p15", "p16", "n02", "p19", "p21",
+  "n02", "p15", "p16", "p19", "p21",
   // New photos from the NEW BEST PICS folder
-  "n01", "n05", "n06", "n04", "n07", "n10", "n11", "n12",
+  "n01", "n06", "n04", "n07", "n10", "n11", "n12",
   "n13", "n15", "n16", "n22", "about", "n26",
   "n27", "p08", "n28",
 ];
