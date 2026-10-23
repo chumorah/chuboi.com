@@ -63,7 +63,7 @@ document.querySelectorAll(".card video").forEach((v) => {
 
 document.getElementById("galleryGrid").innerHTML = GALLERY.map((p) => `
   <button class="reveal" data-src="assets/img/${p}.jpg" aria-label="Open photo">
-    <img src="assets/img/${p}.jpg" alt="ChuBoi with footballers and at events" loading="lazy">
+    <img src="assets/img/${p}.jpg" alt="ChuBoi with players, celebrities and at events" loading="lazy">
   </button>`).join("");
 
 // Hero stats: each platform shows its logo (assets/social/<name>.svg) and follower count; the name stays as the link label.
