@@ -23,7 +23,7 @@ const GALLERY = [
   "p15", "p16", "n02", "p19", "p21",
   // New photos from the NEW BEST PICS folder
   "n01", "n05", "n06", "n04", "n07", "n10", "n11", "n12",
-  "n13", "n15", "n16", "n22", "n23", "about", "n26",
+  "n13", "n15", "n16", "n22", "about", "n26",
   "n27", "p08", "n28",
 ];
 
