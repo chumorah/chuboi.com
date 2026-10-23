@@ -12,7 +12,7 @@ const WORK = [
   { brand: "Man Utd x Adidas", type: "Kit launch", desc: "Kit launch shoot and social content with the Manchester United squad.", image: "assets/img/p07.jpg", url: IG },
   { brand: "EA SPORTS", type: "Host & creator", desc: "On-stage presenting at EA SPORTS esports events.", image: "assets/img/p12.jpg", url: "https://www.youtube.com/channel/UCyMF5o_gAYBPDd5PkS3gugA" },
   { brand: "McDonald's", type: "Sponsored content", desc: "Football-led social content for a global audience.", image: "assets/img/p21.jpg", url: "https://www.tiktok.com/@chuboi" },
-  { brand: "Your brand", type: "Let's talk", desc: "Reach 1M+ engaged FC and football fans.", image: "assets/img/p11.jpg", url: "mailto:chuboi@sportfive.com", cta: true },
+  { brand: "Your brand", type: "Let's talk", desc: "Reach 1M+ engaged FC and football fans.", image: "assets/img/p11.jpg", url: "mailto:chuboibusiness@gmail.com", cta: true },
 ];
 
 // Gallery photos (shown in this order).
